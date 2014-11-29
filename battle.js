@@ -1,8 +1,23 @@
-function battle() {
-    var damage = Math.floor(Math.random() * 5 + 1);
-    var health = 0;
+var damage = 5;
+var health = 0;
+var alive = true;
 
-    health = health + damage;
-    console.log(health);
+function battleInit() {
+    health += damage;
+    console.log("Current health is " + health);
+    
 }
-battle();
+
+function combat() {
+    while (alive) {
+        if (health < 20) {
+            battleInit();
+        } else if (health >= 20) {
+            alive = false;
+            console.log("You're DEAD!");
+        }
+          
+    }
+}
+
+combat();

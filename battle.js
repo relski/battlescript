@@ -1,22 +1,21 @@
 var damage = 5;
-var health = 0;
+var health = 20;
 var alive = true;
 
 function battleInit() {
-    health += damage;
+    health -= damage;
     console.log("Current health is " + health);
     
 }
 
 function combat() {
     while (alive) {
-        if (health < 20) {
+        if (health > 0) {
             battleInit();
-        } else if (health >= 20) {
+        } else if (health <= 0) {
             alive = false;
             console.log("You're DEAD!");
-        }
-          
+        }    
     }
 }
 

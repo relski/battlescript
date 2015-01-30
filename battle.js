@@ -4,7 +4,7 @@ var alive = true;
 
 function battleInit() {
     health -= damage;
-    console.log("Current health is " + health);
+    document.write("<p>Current health is " + health + "<br></p>");
     
 }
 
@@ -14,9 +14,13 @@ function combat() {
             battleInit();
         } else if (health <= 0) {
             alive = false;
-            console.log("You're DEAD!");
+            document.write("<p>You're DEAD!</p>");
         }    
     }
 }
 
-combat();
+function attackFunction() {
+    battleInit();
+}
+
+// combat();

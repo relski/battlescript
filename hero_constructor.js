@@ -1,11 +1,22 @@
-var Unit = function (name, healthPoints, attackPower, unitType) {
-    this.name = name;
+class Unit {
+    constructor(name) {
+        this.name = name
+    }
+}
+
+class Hero extends Unit {
+    constructor(name, healthPoints, attackPower, classType) {
+    super(name)
     this.healthPoints = healthPoints;
     this.attackPower = attackPower;
-    this.unitType = unitType;
-};
+    this.classType = classType;
+    }
+    battle() {
+        return `${this.name} attacks with ${this.attackPower} damage.`
+    }
+}
 
-var hero1 = new Unit ('Gwyn', 60, 3, 'hero');
-var enemy1 = new Unit ('Ogre', 70, 4, 'monster');
+//Init
+const hero1 = new Hero('Gwyn', 10, 2, 'hero')
 
-alert(hero1.healthPoints);
+console.log(hero1.battle())
